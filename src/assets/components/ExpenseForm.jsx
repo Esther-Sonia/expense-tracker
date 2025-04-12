@@ -27,13 +27,25 @@ function ExpenseForm({ toAddExpense }) {
         }
       };
       return (
-        <form onSubmit={handleSubmit}>
+        <div style={{
+          border: "2px solid #000000 ",
+          borderRadius: "6px",
+          padding: "10px",
+
+        }}>
+        <form onSubmit={handleSubmit} style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "8px"
+        }}>
           <input
             name="expense"
             placeholder="Enter expense name"
             value={formData.expense}
             onChange={handleChange}
             required
+            style={inputStyle}
+
           /><br /><br />
           <input
             name="description"
@@ -41,6 +53,8 @@ function ExpenseForm({ toAddExpense }) {
             value={formData.description}
             onChange={handleChange}
             required
+            style={inputStyle}
+
           /><br /><br />
           <input
             name="category"
@@ -48,6 +62,8 @@ function ExpenseForm({ toAddExpense }) {
             value={formData.category}
             onChange={handleChange}
             required
+            style={inputStyle}
+
           /><br /><br />
           <input
             name="amount"
@@ -56,6 +72,8 @@ function ExpenseForm({ toAddExpense }) {
             value={formData.amount}
             onChange={handleChange}
             required
+            style={inputStyle}
+
           /><br /><br />
           <input
             name="date"
@@ -63,11 +81,33 @@ function ExpenseForm({ toAddExpense }) {
             value={formData.date}
             onChange={handleChange}
             required
+            style={inputStyle}
+
           /><br /><br />
-         <button type="submit">Submit</button>
+         <button type="submit"
+         style={{
+          backgroundColor: "#338AE7",
+          padding: "12px 24px",
+          color:"white",
+          borderRadius: "6px",
+          
+        
+
+         }}>Submit</button>
          </form>
+         </div>
+
       );
-    }    
+    }  
+    
+    const inputStyle = {
+      padding: "8px 4px",
+      border: "3px solid #ddd",
+      borderRadius: "4px",
+      fontSize: "14px"
+    };
+    
+   
 
 
 export default ExpenseForm;
