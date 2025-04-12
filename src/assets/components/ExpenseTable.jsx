@@ -2,7 +2,7 @@ import React from "react";
 
 function ExpenseTable({ expenses }) {
     return (
-        <table style={{ width: "100%", borderCollapse: "collapse" }}> 
+        <table style={{ width: "100%", minWidth: "800px", borderCollapse: "collapse" }}> 
             <thead style={{ background: "#338AE7	", color: "#fff" }}>
               <tr>
             <th style={thStyle}>Expense</th>
@@ -30,7 +30,7 @@ function ExpenseTable({ expenses }) {
 }
 
 const thStyle = {
-  padding: "10px",
+  padding: "17px",
   textAlign: "left",
 };
 
