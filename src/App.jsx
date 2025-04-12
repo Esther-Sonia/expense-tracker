@@ -18,14 +18,14 @@ function App() {
   );
 
   return(
-    <div style={{ display: "flex", padding: "20px", fontFamily: "Arial" }}>
-        <div style={{ width: "25%", marginRight: "20px" }}>
-  <h2>Add Expense</h2>
+    <div style={{ display: "flex", padding: "15px", fontFamily: "Arial",  alignItems: "flex-start" }}>
+        <div style={{ width: "15%", padding: "10px" }}>
+        <h2 style={{ margin: "0 0 10px 0", fontSize: "1.2rem" }}>Add Expense</h2>
     <ExpenseForm toAddExpense={addExpense} />
   </div>
 
-  <div style={{ width: "75%" }}>
-  <h1>Expense Tracker</h1>
+  <div style={{ width: "55%",padding:"10px" }}>
+  <h1 style={{ margin: "0 0 10px 0", fontSize: "1.5rem" }}>Expense Tracker</h1>
   <SearchBar setSearchTerm={setSearchTerm} />
   <ExpenseTable expenses={filteredExpenses} />
 </div>
