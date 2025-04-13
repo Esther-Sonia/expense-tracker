@@ -15,7 +15,14 @@ function App() {
   const filteredExpenses = expenses.filter((expense) =>
     expense.expense.toLowerCase().includes(searchTerm.toLowerCase()) ||
     expense.description.toLowerCase().includes(searchTerm.toLowerCase())
+    
   );
+  const deleteExpense = (index) => {
+    const newExpenses = [...expenses];
+    newExpenses.splice(index, 1);
+    setExpenses(newExpenses);
+  };
+
 
   return(
     <div style={{ display: "flex", padding: "15px", fontFamily: "Arial",  alignItems: "flex-start" }}>
@@ -27,7 +34,7 @@ function App() {
   <div style={{ width: "55%",padding:"10px" }}>
   <h1 style={{ margin: "0 0 10px 0", fontSize: "1.5rem" }}>Expense Tracker</h1>
   <SearchBar setSearchTerm={setSearchTerm} />
-  <ExpenseTable expenses={filteredExpenses} />
+  <ExpenseTable expenses={filteredExpenses}  onDelete={deleteExpense} />
 </div>
 </div>
 
