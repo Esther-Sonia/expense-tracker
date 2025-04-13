@@ -44,31 +44,35 @@ npm install
 Start the development server:
 npm start
 
-Usage
-1. Adding an Expense:
+  ## Usage
+1. **Adding an expense**
 
 Fill out all fields in the "Add Expense" form
 
 Click "Submit" to add to the table
 
-2. Sorting Expenses:
+
+2. **Sorting expenses**
 
 Click any column header to sort A-Z 
 
 
-3. Searching Expenses:
+3. **Searching expenses:**
 
 Type in the search bar to filter results
 
 Matching expenses appear instantly
 
-4. Deleting Expenses:
+
+4. **Deleting expenses**
 
 Click the red "Delete" button on any row
 
 Expense is immediately removed
 
- Technologies Used
+
+  ## Technologies used
+
 ⚛️ React (v18+)
 
 🎨 CSS (inline styling)
