@@ -69,6 +69,8 @@ const tdStyle = {
   padding: "10px",
   textAlign: "left",
   cursor: "pointer",
+  width: "100px",
+
 
 };
 
