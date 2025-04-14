@@ -75,7 +75,7 @@ Expense is immediately removed
 
 ⚛️ React (v18+)
 
-🎨 CSS (inline styling)
+🎨 Tailwind CSS
 
 🗃️ React Hooks (useState)
 
