@@ -25,14 +25,14 @@ function App() {
 
 
   return(
-    <div style={{ display: "flex", padding: "15px", fontFamily: "Arial",  alignItems: "flex-start" }}>
-        <div style={{ width: "15%", padding: "10px" }}>
-        <h2 style={{ margin: "0 0 10px 0", fontSize: "1.2rem" }}>Add Expense</h2>
-    <ExpenseForm toAddExpense={addExpense} />
+    <div className="flex flex-col md:flex-row p-4 font-sans items-start gap-6">
+      <div className="w-full md:w-1/5 bg-white shadow-md p-4 rounded-lg">
+      <h2 className="text-lg font-semibold mb-4">Add Expense</h2>
+      <ExpenseForm toAddExpense={addExpense} />
   </div>
 
-  <div style={{ width: "55%",padding:"10px" }}>
-  <h1 style={{ margin: "0 0 10px 0", fontSize: "1.5rem" }}>Expense Tracker</h1>
+  <div className="w-full md:w-3/5 bg-white shadow-md p-4 rounded-lg">
+  <h1 className="text-xl font-bold mb-4">Expense Tracker</h1>
   <SearchBar setSearchTerm={setSearchTerm} />
   <ExpenseTable expenses={filteredExpenses}  onDelete={deleteExpense} />
 </div>

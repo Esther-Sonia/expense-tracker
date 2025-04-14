@@ -10,69 +10,43 @@ function ExpenseTable({ expenses, onDelete }) {
     return a[sortBy].localeCompare(b[sortBy]);
   });
 
-  const sortButtonStyle = {
-    marginLeft: "8px",
-    padding: "4px 8px",
-    fontSize: "12px",
-    backgroundColor: "#f0f0f0",
-  };
-
     return (
-        <table style={{ width: "100%", minWidth: "800px", borderCollapse: "collapse" }}> 
-            <thead style={{ background: "#338AE7	", color: "#fff" }}>
-              <tr>
-            <th style={thStyle} onClick={() => setSortBy('expense')} >Expense</th>
-            <th style={thStyle}> Description <button onClick={() => setSortBy('description')}style={sortButtonStyle} > Sort (A-Z)</button> </th>
-            <th style={thStyle}> Category <button onClick={() => setSortBy('category')}style={sortButtonStyle} > Sort (A-Z)</button> </th>
-            <th style={thStyle}>Amount</th>
-            <th style={thStyle}>Date</th>
-            <th style={thStyle}>Action</th> 
-            </tr>
+      <table className="min-w-full border-collapse">
+      <thead className="bg-blue-600 text-white">
+      <tr>
+      <th className="px-4 py-4 text-left">Expense</th>
+      <th className="px-4 py-4 text-left"> Description <button onClick={() => setSortBy("description")} 
+          className="ml-2 px-3 py-1 text-black bg-gray-200 rounded" >  Sort (A-Z) </button> </th>             
+      <th className="px-4 py-4 text-left"> Category <button onClick={() => setSortBy("category")}
+          className="ml-2 px-3 py-1 text-black bg-gray-200 rounded" > Sort (A-Z) </button> </th>          
+      <th className="px-4 py-4 text-left">Amount</th>
+      <th className="px-4 py-4 text-left">Date</th>
+      <th className="px-4 py-4 text-left">Action</th>
+        </tr>
             </thead>
             <tbody>
-                {sortedExpenses.map((exp, index) => 
+                {sortedExpenses.map((exp, index) => (
                     <tr key={index}>
-                    <td style={tdStyle}>{exp.expense}</td>
-                    <td style={tdStyle}>{exp.description}</td>
-                    <td style={tdStyle}>{exp.category}</td>
-                    <td style={tdStyle}>{exp.amount}</td>
-                    <td style={tdStyle}>{exp.date}</td>
-                    <td style={tdStyle}>
+                    <td className="px-4 py-2 border-b">{exp.expense}</td>
+            <td className="px-4 py-2 border-b">{exp.description}</td>
+            <td className="px-4 py-2 border-b">{exp.category}</td>
+            <td className="px-4 py-2 border-b">{exp.amount}</td>
+            <td className="px-4 py-2 border-b">{exp.date}</td>
+            <td className="px-4 py-2 border-b">
               <button 
                 onClick={() => onDelete(index)}
-                style={{ 
-                  background: "#ff4444", 
-                  color: "white", 
-                  border: "none",
-                  padding: "10px",
-                  borderRadius: "6px"
-                }}
-              >
+                className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600" >
                 Delete
               </button>
             </td>
                     </tr>
-                )}
+                ))}
 
             </tbody>
 
         </table>
     );
 }
-
-const thStyle = {
-  padding: "17px",
-  textAlign: "left",
-};
-
-const tdStyle = {
-  padding: "10px",
-  textAlign: "left",
-  cursor: "pointer",
-  width: "100px",
-
-
-};
 
 
 

@@ -27,12 +27,8 @@ function ExpenseForm({ toAddExpense }) {
         }
       };
       return (
-        <div style={{
-          border: "2px solid #000000 ",
-          borderRadius: "6px",
-          padding: "10px",
+        <div className="border-2 border-black rounded-md p-4 shadow-md">
 
-        }}>
         <form onSubmit={handleSubmit} style={{
           display: "flex",
           flexDirection: "column",
@@ -44,7 +40,7 @@ function ExpenseForm({ toAddExpense }) {
             value={formData.expense}
             onChange={handleChange}
             required
-            style={inputStyle}
+            className={inputClasses}
 
           /><br /><br />
           <input
@@ -53,7 +49,7 @@ function ExpenseForm({ toAddExpense }) {
             value={formData.description}
             onChange={handleChange}
             required
-            style={inputStyle}
+            className={inputClasses}
 
           /><br /><br />
           <input
@@ -62,7 +58,7 @@ function ExpenseForm({ toAddExpense }) {
             value={formData.category}
             onChange={handleChange}
             required
-            style={inputStyle}
+            className={inputClasses}
 
           /><br /><br />
           <input
@@ -72,7 +68,7 @@ function ExpenseForm({ toAddExpense }) {
             value={formData.amount}
             onChange={handleChange}
             required
-            style={inputStyle}
+            className={inputClasses}
 
           /><br /><br />
           <input
@@ -81,33 +77,23 @@ function ExpenseForm({ toAddExpense }) {
             value={formData.date}
             onChange={handleChange}
             required
-            style={inputStyle}
+            className={inputClasses}
 
           /><br /><br />
-         <button type="submit"
-         style={{
-          backgroundColor: "#338AE7",
-          padding: "12px 24px",
-          color:"white",
-          borderRadius: "6px",
-          
-        
-
-         }}>Submit</button>
+       <button
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition duration-300"
+        >
+          Submit
+        </button>
          </form>
          </div>
 
       );
     }  
     
-    const inputStyle = {
-      padding: "8px 4px",
-      border: "3px solid #ddd",
-      borderRadius: "4px",
-      fontSize: "14px"
-    };
-    
-   
+    const inputClasses =
+  "px-3 py-2 border-2 border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500";
 
 
 export default ExpenseForm;
